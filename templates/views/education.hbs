@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Responsive Navigation Bar</title>
+</head>
+
+<body>
+
+{{>navbar}}
+    <section class="landingmainsection" style="flex-direction: row-reverse;">
+      <div class="heading"><p class="firstheading">Why Choose Us</p>
+          <p class="secondaryheading">Lorem ipsum dolor sit amet consectetur</p>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio id molestiae nemo amet qui ad nesciunt cumque illum! Delectus laudantium eius fuga ad similique deserunt sit, atque soluta! Reiciendis, doloribus.</p>
+          <button class="btn-circle" onclick="window.location.href='https://www.example.com'">TAKE TEST</button>
+      </div>
+      <div class="headingimage"><img class="mainimage" src="images/save.webp" alt="" srcset=""></div>
+  
+  </section>
+  
+  <section class="landingmainsection" style="flex-direction: row;">
+    <div class="heading"><p class="firstheading">Why Choose Us</p>
+        <p class="secondaryheading">Lorem ipsum dolor sit amet consectetur</p>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio id molestiae nemo amet qui ad nesciunt cumque illum! Delectus laudantium eius fuga ad similique deserunt sit, atque soluta! Reiciendis, doloribus.</p>
+        <button class="btn-circle" onclick="window.location.href='/counselordata'">BOOK APPOINTMENT</button>
+    </div>
+    <div class="headingimage"><img class="mainimage" src="images/save.webp" alt="" srcset=""></div>
+
+</section>
+{{>footer}}
+  
+</body>
+{{>scripts}}
+</html>

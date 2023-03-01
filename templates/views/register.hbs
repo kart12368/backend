@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Responsive Navigation Bar</title>
+</head>
+
+<body>
+
+  {{>navbar}}
+    <section class="landingmainsection" >
+<div style="flex: 1; margin: 55px;">
+    <h1 style="margin: 15px;" class="footheading">Counseling</h1>
+    <h2 style="margin: 15px;">Create your account</h2>
+    <hr>
+        <form action="/register" method="POST" class="mainform" >
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button style="margin: 15px;" type="submit" class="btn btn-primary btn-lg">Create Account</button>
+            <h3 style="margin: 15px;">Already Have an Account? <a href="/login">Log in</a></h3>
+          </form>
+        </div>
+            <div class="headingimage" style="flex: 1;"><img class="mainimage" src="images/save.webp" alt="" srcset=""></div>
+    
+    </section>
+    
+      
+  {{>footer}}
+  <script>
+  const menuHamburger = document.querySelector(".menu-hamburger")
+  const navLinks = document.querySelector(".nav-links")
+
+  menuHamburger.addEventListener("click",() =>{
+    navLinks.classList.toggle("mobile-menu")
+  })
+  document.getElementById("login-btn").addEventListener("click", function() {
+  window.location.href = "/register";
+});
+
+</script>
