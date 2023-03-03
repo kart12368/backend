@@ -5,6 +5,7 @@ const path = require("path")
 const app = express()
 const hbs = require("hbs")
 const Register = require("./models/user.js")
+
 const port = process.env.PORT || 3000;
 dotenv.config()
 
@@ -61,6 +62,10 @@ app.get("/counselordata",(req,res)=>{
     res.render("counselordata");
 })
 
+app.get("/logout",(req,res)=>{
+    res.render("index");
+})
+
 app.post("/register", async (req,res)=>{
     try {
         const registerEmployee = new Register({
@@ -81,15 +86,19 @@ app.post("/login", async (req,res)=>{
         const password = req.body.password;
 
         const useremail = await Register.findOne({email:email});
-
         if(useremail.password === password){
-            res.status(201).send("Welcome. You are logged in.")
+            res.status(201).render("loggedin")
         }
         else{
-            res.send("invalid login details.")
+            const errorMessage = 'Invalid email or password';
+            const script = `<script>alert('${errorMessage}'); window.location.href = '/login';</script>`;
+            res.send(script);
+
         }
     } catch (error) {
-        res.status(400).send("invalid login details.")
+        const errorMessage = 'User not exist';
+        const script = `<script>alert('${errorMessage}'); window.location.href = '/login';</script>`;
+        res.status(400).send(script)
     }
 })
 

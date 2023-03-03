@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Responsive Navigation Bar</title>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="/" class="logo">Consulting</a>
+      <div class="nav-links">
+      <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="aboutus">About Us</a></li>
+        <li><a href="education">Education</a></li>
+        <li><a href="agritech">AgriTech</a></li>
+        <li><a href="energy">Energy</a></li>
+        <li><a href="waste">Waste-Management</a></li>
+        <li><a href="contact">Contact us</a></li>
+      </ul>
+    </div>
+    <button id="logout-btn" class="btn btn-primary btn-lg">Logout</button>
+    <img src="images/ham.png" alt="menu hamburger" class="menu-hamburger">
+    </nav>
+<section class="landingmainsection">
+      <h1 style="">Welcome to our site!</h1>
+      <br>
+      <p>You have successfully logged in.</p>
+    {{!-- <div class="headingimage"><img class="mainimage" src="images/save.webp" alt="" srcset=""></div> --}}
+
+</section>
+
+    
+    
+
+    {{>footer}}
+</body>
+  <script>
+  const menuHamburger = document.querySelector(".menu-hamburger")
+  const navLinks = document.querySelector(".nav-links")
+
+  menuHamburger.addEventListener("click",() =>{
+    navLinks.classList.toggle("mobile-menu")
+  })
+  document.getElementById("logout-btn").addEventListener("click", function() {
+  window.location.href = "/login";
+});
+
+</script></html>

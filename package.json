@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js -e js,hbs",
     "build": "handlebars views/*.hbs -f public/index.html"
-
   },
   "keywords": [],
   "author": "",
@@ -15,6 +14,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.12.0",
     "hbs": "^4.2.0",
     "mongoose": "^7.0.0",
     "nodemon": "^2.0.20"

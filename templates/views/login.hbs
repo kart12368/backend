@@ -24,11 +24,15 @@
         <form class="mainform" action="/login" method="POST" >
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+              <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+              <span id="username-error" class="error-message"></span>
+
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+              <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+              <span id="password-error" class="error-message"></span>
+
             </div>
             <button style="margin: 15px;" type="submit" class="btn btn-primary btn-lg">Login</button>
           </form>
@@ -49,5 +53,47 @@
   document.getElementById("login-btn").addEventListener("click", function() {
   window.location.href = "/register";
 });
+    const form = document.getElementById('login-form');
+  const usernameField = document.getElementById('username');
+  const passwordField = document.getElementById('password');
 
+  form.addEventListener('submit', (event) => {
+    let isValid = true;
+
+    // Check if the username is valid
+    if (usernameField.value.trim() === '') {
+      usernameField.classList.add('invalid');
+      document.getElementById('username-error').textContent = 'Please enter a valid username';
+      isValid = false;
+    } else {
+      usernameField.classList.remove('invalid');
+      document.getElementById('username-error').textContent = '';
+    }
+
+    // Check if the password is valid
+    if (passwordField.value.trim() === '') {
+      passwordField.classList.add('invalid');
+      document.getElementById('password-error').textContent = 'Please enter a valid password';
+      isValid = false;
+    } else {
+      passwordField.classList.remove('invalid');
+      document.getElementById('password-error').textContent = '';
+    }
+
+    // If the form is not valid, prevent submission
+    if (!isValid) {
+      event.preventDefault();
+    }
+  });
+
+  // Remove the error message when the user clicks on the field again
+  usernameField.addEventListener('click', () => {
+    usernameField.classList.remove('invalid');
+    document.getElementById('username-error').textContent = '';
+  });
+
+  passwordField.addEventListener('click', () => {
+    passwordField.classList.remove('invalid');
+    document.getElementById('password-error').textContent = '';
+  });
 </script>
