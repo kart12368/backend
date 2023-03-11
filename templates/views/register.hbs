@@ -23,11 +23,15 @@
         <form action="/register" method="POST" class="mainform" >
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+              <input  required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFullName1">Full Name</label>
+              <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fullname" placeholder="Enter full name">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input required type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <button style="margin: 15px;" type="submit" class="btn btn-primary btn-lg">Create Account</button>
             <h3 style="margin: 15px;">Already Have an Account? <a href="/login">Log in</a></h3>

@@ -70,6 +70,7 @@ app.post("/register", async (req,res)=>{
     try {
         const registerEmployee = new Register({
             email : req.body.email,
+            fullname: req.body.fullname,
             password : req.body.password
         })
 

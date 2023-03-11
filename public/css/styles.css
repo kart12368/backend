@@ -150,7 +150,7 @@
   /* Navigation Bar */
   
   .navbar {
-    position: absolute;
+    /* position: absolute; */
     padding: 50px;
     display: flex;
     justify-content: space-between;

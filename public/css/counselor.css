@@ -1,0 +1,71 @@
+.fcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 50px;
+    justify-content: space-between;
+}
+
+.fcontainer2{
+    margin-bottom: 100px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.fcontainer21{
+    display: flex;
+}
+
+.fitem21 {
+    /* width: 50%; */
+    /* height: 100px; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* font-size: 24px; */
+    /* color: white; */
+    border-radius: 25px;
+    
+  }
+
+  .fitem211 {
+    /* background-color: blue; */
+    z-index: 5;
+    width:50px
+  }
+  
+  .fitem212 {
+    background-color:white;
+    position: relative;
+    top: 50px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    max-width: 80%;
+    padding-top:10px ;
+    /* margin-left: 0px; */
+    flex: 1;   
+  }
+
+  .fitem212 h4,.fitem212 h5,.fitem212 p,.fitem212 button{
+    margin-left: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 50px;
+
+  }
+
+
+  h4{
+    font-size: 23px;
+    margin-top: 20px;
+    font-family: poppins,Sans-serif;
+    font-weight: 500;
+    /* line-height: 44px; */
+    color: #4d0aa4;
+  }
+  
+  
+
