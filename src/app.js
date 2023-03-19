@@ -1,10 +1,18 @@
-const express = require("express")
-const dotenv = require("dotenv");
-const { default: mongoose } = require("mongoose");
-const path = require("path")
+import express from "express";
+import dotenv from "dotenv";
+import moragan from "morgan";
+import mongoose from "mongoose";
+import path from "path";
+import hbs from "hbs";
+import authRoute from "./routes/auth.js";
+import errorMonitor from "stream";
+import { register } from "./controllers/auth.js"
+import { fileURLToPath } from 'url';
+
+
 const app = express()
-const hbs = require("hbs")
-const Register = require("./models/user.js")
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const port = process.env.PORT || 3000;
 dotenv.config()
@@ -22,64 +30,46 @@ const static_path = path.join(__dirname, "../public/")
 const templates_path = path.join(__dirname, "../templates/views")
 const partials_path = path.join(__dirname, "../templates/partials")
 
+//middlewares
+
 app.use(express.json());
+// app.use(moragan("dev"))
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(static_path))
 app.set("view engine", "hbs");
 app.set("views", templates_path)
 hbs.registerPartials(partials_path)
+app.use("/",authRoute)  
 
-app.get("/",(req,res)=>{
-    res.render("index")
-})
+// app.use(err,req,res,next)=>{
+//     const errorStatus = err.status || 500;
+//     const errorMessage = err.message || "Something went wrong!"
+//     return res.status(errorStatus).json({
+//         success:false,
+//         status:errorStatus,
+//         message:errorMessage,
+//         stack:err.stack    
 
-app.get("/register",(req,res)=>{
-    res.render("register");
-})
+//     })
+// }
 
 
-app.get("/login",(req,res)=>{
-    res.render("login");
-})
 
-app.get("/aboutus",(req,res)=>{
-    res.render("aboutus");
-})
+app.post("/register", register)
+// app.post("/register", async (req,res)=>{
+//     try {
+//         const registerEmployee = new Register({
+//             email : req.body.email,
+//             fullname: req.body.fullname,
+//             password : req.body.password
+//         })
 
-app.get("/agritech",(req,res)=>{
-    res.render("agritech");
-})
-
-app.get("/contact",(req,res)=>{
-    res.render("contact");
-})
-
-app.get("/education",(req,res)=>{
-    res.render("education");
-})
-
-app.get("/counselordata",(req,res)=>{
-    res.render("counselordata");
-})
-
-app.get("/logout",(req,res)=>{
-    res.render("index");
-})
-
-app.post("/register", async (req,res)=>{
-    try {
-        const registerEmployee = new Register({
-            email : req.body.email,
-            fullname: req.body.fullname,
-            password : req.body.password
-        })
-
-        const registered = await registerEmployee.save();
-        res.status(201).render("index");
-    } catch (error) {
-        res.status(400).send(error)
-    }
-})
+//         const registered = await registerEmployee.save();
+//         res.status(201).render("index");
+//     } catch (error) {
+//         res.status(400).send(error)
+//     }
+// })
 
 app.post("/login", async (req,res)=>{
     try {

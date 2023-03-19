@@ -443,7 +443,6 @@
   
   .footmenu  ul li a{
     margin: 10px 0;
-  
   }
   
   #Form
@@ -454,3 +453,8 @@
     top:12px;
     right: 25px;
   }
+
+  .Home,.Education,.AboutUs,.AgriTech,.Contact,.Waste,.Energy{
+    color: #000;
+  }
+  

@@ -55,5 +55,10 @@
   document.getElementById("logout-btn").addEventListener("click", function() {
   window.location.href = "/login";
 });
+var elements = document.getElementsByClassName("Home");
+for (var i = 0; i < elements.length; i++) {
+  elements[i].classList.add("active");
+}
+
 
 </script></html>
