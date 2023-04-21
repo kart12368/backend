@@ -51,8 +51,13 @@ router.get("/logout",(req,res)=>{
 })
 
 router.get("/appointment",(req,res)=>{
-    res.render("booking");
-})
+    if (req.session.isLoggedIn) {
+        // Render booking page if user is logged in
+        res.render('booking');
+      } else {
+        // Redirect to login page if user is not logged in
+        res.redirect('/login');
+      }})
 
 router.post("/register",verifyToken, register)
 router.post("/login", login)

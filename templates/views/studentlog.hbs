@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/afterlogin.css">  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Responsive Navigation Bar</title>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="/" class="logo">Consulting</a>
+      <div class="nav-links">
+      <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="aboutus">About Us</a></li>
+        <li><a href="education">Education</a></li>
+        <li><a href="agritech">AgriTech</a></li>
+        <li><a href="energy">Energy</a></li>
+        <li><a href="waste">Waste-Management</a></li>
+        <li><a href="contact">Contact us</a></li>
+      </ul>
+    </div>
+    <button id="logout-btn" class="btn btn-primary btn-lg">Logout</button>
+    <img src="images/ham.png" alt="menu hamburger" class="menu-hamburger">
+    </nav>
+          {{!-- <div class="headingimage"><img class="mainimage" src="images/save.webp" alt="" srcset=""></div> --}}
+
+          <header>
+		<h1>Welcome to Career Counseling</h1>
+		<p>We are here to help you make informed career choices.</p>
+	</header>
+	<main>
+		<div class="appointment">
+			<h2>Book an Appointment</h2>
+			<p>Click the button below to schedule a time slot with one of our experienced career counselors.</p>
+			<button>Book Appointment</button>
+		</div>
+		<div class="resources">
+			<h2>Career Counseling Resources</h2>
+			<p>Explore our collection of articles, videos, and tools that can help you make informed career choices.</p>
+			<button>View Resources</button>
+		</div>
+		<div class="recommendations">
+			<h2>Personalized Recommendations</h2>
+			<p>Answer a few questions to get personalized recommendations based on your interests and skills.</p>
+			<button>Take the Quiz</button>
+		</div>
+		<div class="testimonials">
+			<h2>Testimonials</h2>
+			<p>See what other students have to say about our career counseling services.</p>
+			<button>Read Testimonials</button>
+		</div>
+	</main>
+
+
+    
+    
+
+    {{>footer}}
+</body>
+  <script>
+  const menuHamburger = document.querySelector(".menu-hamburger")
+  const navLinks = document.querySelector(".nav-links")
+
+  menuHamburger.addEventListener("click",() =>{
+    navLinks.classList.toggle("mobile-menu")
+  })
+  document.getElementById("logout-btn").addEventListener("click", function() {
+  window.location.href = "/login";
+});
+var elements = document.getElementsByClassName("Home");
+for (var i = 0; i < elements.length; i++) {
+  elements[i].classList.add("active");
+}
+
+
+</script></html>

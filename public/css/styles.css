@@ -293,10 +293,12 @@
     border-radius: 15px;
     padding: 2% 3%;
     max-width: 270px;
+    height: 296.000px;
     margin: 0 15px;
     color: #fff;
     flex: 1;
   }
+  
   
   .servicessection{
     display: flex;
@@ -457,4 +459,23 @@
   .Home,.Education,.AboutUs,.AgriTech,.Contact,.Waste,.Energy{
     color: #000;
   }
+
+  /* form */
+  label[for="access-level"] {
+    display: inline-block;
+    width: 120px;
+    /* text-align: right; */
+    margin-right: 10px;
+  }
+  
+  .form-row {
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  
+  #access-level {
+    display: inline-block;
+    width: 120px;
+  }
+  
   

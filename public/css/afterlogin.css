@@ -7,3 +7,37 @@
 
 .fitem{
 }
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    padding: 20px;
+  }
+
+.appointment{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-left:15px;
+    }
+  
+  button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    }
+  
+
+header{
+    margin: 70px;
+}

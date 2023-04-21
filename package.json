@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js -e js,hbs",
+    "dev": "nodemon src/app.js -e js,hbs,css",
     "build": "handlebars views/*.hbs -f public/index.html"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-openid-connect": "^2.12.0",
+    "express-session": "^1.17.3",
     "hbs": "^4.2.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",

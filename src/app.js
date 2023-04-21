@@ -8,6 +8,7 @@ import authRoute from "./routes/auth.js";
 import errorMonitor from "stream";
 import { register } from "./controllers/auth.js"
 import { fileURLToPath } from 'url';
+import session from 'express-session';
 
 
 const app = express()
@@ -31,6 +32,15 @@ const templates_path = path.join(__dirname, "../templates/views")
 const partials_path = path.join(__dirname, "../templates/partials")
 
 //middlewares
+app.use(session({
+    secret: 'my-secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      secure: false, // set this to true if using HTTPS
+      maxAge: 1000 * 60 * 60 * 24 // session expires after 1 day
+    }
+  }));
 
 app.use(express.json());
 // app.use(moragan("dev"))
@@ -40,6 +50,7 @@ app.set("view engine", "hbs");
 app.set("views", templates_path)
 hbs.registerPartials(partials_path)
 app.use("/",authRoute)  
+    
 
 // app.use(err,req,res,next)=>{
 //     const errorStatus = err.status || 500;
